@@ -1,0 +1,16 @@
+name: CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  kb:
+    runs-on: ubuntu-22.04
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: S
+      run: |
+        free -h
+        sudo cat /proc/swaps
