@@ -12,5 +12,8 @@ jobs:
       uses: actions/checkout@v2
     - name: S
       run: |
+        sudo apt-get install zram-tools
+        echo -e "ALGO=zstd\nPERCENT=100" > /etc/default/zramswap
+        sudo systemctl restart zramswap
         free -h
         sudo cat /proc/swaps
