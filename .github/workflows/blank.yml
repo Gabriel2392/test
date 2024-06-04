@@ -14,6 +14,6 @@ jobs:
       run: |
         sudo apt-get install zram-tools
         sudo bash -c 'echo -e "ALGO=zstd\nPERCENT=100" > /etc/default/zramswap'
-        sudo systemctl restart zramswap
+        sudo systemctl enable --now zramswap
         free -h
         sudo cat /proc/swaps
